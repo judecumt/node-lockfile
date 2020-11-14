@@ -1,6 +1,6 @@
 {
   "name": "@liuchao/lockfile",
-  "version": "1.0.5",
+  "version": "1.0.9",
   "description": "lock file",
   "main": "index.js",
   "scripts": {

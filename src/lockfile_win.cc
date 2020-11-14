@@ -35,19 +35,19 @@ int lockfile(char* file_path, char* file_content, size_t file_content_len)
 
   if (hfile != INVALID_HANDLE_VALUE) {
     if (!locked) {
-      f_ret = LockFile(hfile, 100, 100 + file_content_len, 1, 0);
+      f_ret = LockFile(hfile, 100, 100, 1, 0);
     } else {
       f_ret = true;
     }
     if (f_ret) {
       global_handle[file_path] = hfile;
       ret = 0;
-      if (file_content) {
+      if (file_content[0]) {
         LARGE_INTEGER fp;
         fp.QuadPart = 0;
         SetFilePointerEx(hfile, fp, NULL, FILE_BEGIN);
         SetEndOfFile(hfile);
-        WriteFile(hfile, file_content, strlen(file_content) + 1, NULL, NULL);
+        WriteFile(hfile, file_content, strlen(file_content), NULL, NULL);
         FlushFileBuffers(hfile);
       }
     } else {

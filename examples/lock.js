@@ -5,7 +5,7 @@ let buf = Buffer.alloc(128)
 buf.fill('hello', 0, 5)
 let file = path.join(__dirname, 'lock')
 console.log('file: ' + file)
-let ret = lockfile.lockFile(file, buf)
+let ret = lockfile.lockFile(file)
 if (ret === 0) {
   console.log('locked')
   setTimeout(() => {
@@ -14,7 +14,7 @@ if (ret === 0) {
   }, 2000)
 } else if (Buffer.isBuffer(ret)) {
   console.log('failed to lock')
-  console.log(ret.toString())
+  console.log('content: ' + ret.toString())
   setTimeout(() => {
     ret = lockfile.lockFile(file, buf)
     if (ret === 0) {

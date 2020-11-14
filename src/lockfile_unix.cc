@@ -54,10 +54,10 @@ int lockfile(char* file_path, char* file_content, size_t file_content_len)
 
     if (ret == 0) {
       global_handle[file_path] = fd;
-      if (file_content) {
+      if (file_content[0]) {
         f_ret = ftruncate(fd, 0);
         if (f_ret == 0) {
-          f_ret = write(fd, file_content, strlen(file_content) + 1);
+          f_ret = write(fd, file_content, strlen(file_content));
           if (f_ret < 0) {
             ret = -1;
           }

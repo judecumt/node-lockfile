@@ -15,8 +15,10 @@ NAN_METHOD(LockFile)
     buf_len = 1024;
   }
   buf = (char*)malloc(buf_len + 1);
-  memcpy(buf, node::Buffer::Data(info[1]), buf_len);
-  buf[buf_len] = 0;
+  memset(buf, 0, buf_len + 1);
+  if (node::Buffer::HasInstance(info[1])) {
+    memcpy(buf, node::Buffer::Data(info[1]), buf_len);
+  }
 
   int ret = lockfile((char*)file_path.data(), buf, buf_len);
   if (ret == 1) {
