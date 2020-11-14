@@ -1,0 +1,25 @@
+{
+  "name": "@liuchao/lockfile",
+  "version": "1.0.5",
+  "description": "lock file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "nan": "2.13.2",
+    "delay": "^4.3.0",
+    "printf": "^0.5.2",
+    "fs-extra": "^8.1.0",
+    "q_": "^1.0.5"
+  },
+  "devDependencies": {
+    "prebuild": "^9.1.1",
+    "mocha": "^6.2.2",
+    "chai": "^4.2.0"
+  }
+}
