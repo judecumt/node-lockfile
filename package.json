@@ -1,17 +1,18 @@
 {
-  "name": "@liuchao/lockfile",
+  "name": "@judecumt/lockfile",
   "version": "1.0.10",
   "description": "Lock file for nodejs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "node-gyp rebuild"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/judecumt/node-lockfile.git"
+    "url": "git+https://github.com/judecumt/node-lockfile.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "liuchao",
   "license": "ISC",
   "dependencies": {
     "bindings": "^1.5.0",
@@ -19,5 +20,13 @@
   },
   "devDependencies": {
     "prebuild": "^9.1.1"
+  },
+  "gypfile": true,
+  "bugs": {
+    "url": "https://github.com/judecumt/node-lockfile/issues"
+  },
+  "homepage": "https://github.com/judecumt/node-lockfile#readme",
+  "directories": {
+    "example": "examples"
   }
 }
